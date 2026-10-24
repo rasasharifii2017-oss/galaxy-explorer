@@ -1,1 +1,78 @@
 
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COSMONOVA | کاوشگر فضا</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Tahoma,Arial,sans-serif;color:white;background:radial-gradient(ellipse at top,#35116b,#08051a 75%);min-height:100vh}
+header{text-align:center;padding:45px 15px 25px}
+h1{direction:ltr;font-size:clamp(2.5rem,8vw,5rem);margin:0;color:#d9a7ff;text-shadow:0 0 25px #9a48ff}
+header p{color:#d5c7ff;line-height:2}
+#search{display:block;width:min(90%,440px);padding:15px 20px;margin:25px auto;border:1px solid #8055c9;border-radius:30px;background:#17102f;color:white;font-size:16px}
+.planets{width:min(1100px,92%);margin:35px auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+.card{text-align:center;padding:25px 18px;border:1px solid #7546a8;border-radius:22px;background:#ffffff0b;transition:.25s}
+.card:hover{transform:translateY(-7px);background:#ffffff16}
+.planet{font-size:75px;display:inline-block;animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.card h2{color:#ddb5ff}
+.card p{color:#d4cde7;line-height:2}
+.tag{display:inline-block;border-radius:20px;padding:7px 14px;background:#39205c;color:#e1c4ff}
+footer{text-align:center;padding:30px 10px;color:#bca8dc}
+</style>
+</head>
+<body>
+<header>
+<h1>🌌 COSMONOVA</h1>
+<p>فراتر از ستاره‌ها، به‌سوی ناشناخته‌ها! 🚀</p>
+<p>به دنیای شگفت‌انگیز سیاره‌ها و کهکشان‌ها خوش آمدی.</p>
+</header>
+<input id="search" type="search" placeholder="🔎 جست‌وجوی سیاره یا کهکشان...">
+<main class="planets">
+<article class="card" data-name="زمین earth">
+<div class="planet">🌍</div><h2>زمین</h2>
+<p>خانه‌ی آبی ما؛ جهانی که می‌شناسیم و در آن زندگی می‌کنیم.</p>
+<span class="tag">سیاره‌ی سنگی</span>
+</article>
+<article class="card" data-name="مریخ mars">
+<div class="planet">🔴</div><h2>مریخ</h2>
+<p>سیاره‌ی سرخ با آتشفشان‌های عظیم و نشانه‌هایی از آب باستانی.</p>
+<span class="tag">سیاره‌ی سنگی</span>
+</article>
+<article class="card" data-name="مشتری jupiter">
+<div class="planet">🪐</div><h2>مشتری</h2>
+<p>بزرگ‌ترین سیاره‌ی منظومه‌ی شمسی، با توفان بزرگ و معروفش.</p>
+<span class="tag">غول گازی</span>
+</article>
+<article class="card" data-name="زحل saturn">
+<div class="planet">🪐</div><h2>زحل</h2>
+<p>جهانی زیبا با حلقه‌هایی از یخ و سنگ.</p>
+<span class="tag">غول گازی</span>
+</article>
+<article class="card" data-name="ماه moon">
+<div class="planet">🌕</div><h2>ماه</h2>
+<p>همراه طبیعی زمین که جزر و مد اقیانوس‌ها را تحت تأثیر قرار می‌دهد.</p>
+<span class="tag">قمر زمین</span>
+</article>
+<article class="card" data-name="راه شیری milky way">
+<div class="planet">🌌</div><h2>راه شیری</h2>
+<p>کهکشان خانه‌ی ما؛ مجموعه‌ای عظیم از ستاره‌ها و غبار کیهانی.</p>
+<span class="tag">کهکشان مارپیچی</span>
+</article>
+</main>
+<footer>✨ ساخته‌شده برای کاوشگران کنجکاو فضا ✨</footer>
+<script>
+const search=document.getElementById('search');
+const cards=document.querySelectorAll('.card');
+search.addEventListener('input',()=>{
+const q=search.value.trim().toLowerCase();
+cards.forEach(card=>{
+card.style.display=card.dataset.name.toLowerCase().includes(q)?'':'none';
+});
+});
+</script>
+</body>
+</html>
+
